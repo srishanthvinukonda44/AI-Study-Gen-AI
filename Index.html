@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Buddy (Frontend Only)</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🧠</span> AI Study Buddy</div>
+    <div class="nav-links">
+      <a href="#/" data-route="">Home</a>
+      <a href="#/upload" data-route="upload">Upload Notes</a>
+      <a href="#/quiz" data-route="quiz">Quiz Mode</a>
+      <a href="#/explain" data-route="explain">Explain Topic</a>
+      <a href="#/dashboard" data-route="dashboard">Dashboard</a>
+      <button id="settings-btn" class="btn-settings" title="Set your AI API key">⚙️ Settings</button>
+    </div>
+  </nav>
+
+  <main class="container" id="app">
+    <!-- All page content is injected here by js/app.js -->
+  </main>
+
+  <footer class="footer">
+    Frontend-only build & middot; HTML, CSS, JavaScript & middot; data stored in your browser
+  </footer>
+
+  <!-- Settings modal: where the user enters their own AI API key -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>⚙️ AI Settings</h3>
+        <button id="settings-close" class="modal-close">& times;</button>
+      </div>
+      <form id="settings-form">
+        <label for="provider-select">AI Provider</label>
+        <select id="provider-select">
+          <option value="openai">OpenAI (gpt-4o-mini)</option>
+          <option value="gemini">Google Gemini (gemini-3.5-flash)</option>
+        </select>
+
+        <label for="api-key-input">Your API Key</label>
+        <input type="password" id="api-key-input" placeholder="Paste your API key here">
+        <p class="hint">
+          Your key is stored only in this browser's local storage and is sent
+          directly to the AI provider — never to any server of ours (we don't have one!).
+          Get a free key:
+          <a href="https://aistudio.google.com/app/apikey" target="_blank">Gemini</a> ·
+          <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI</a>
+        </p>
+
+        <button type="submit" class="btn-primary">Save Settings</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="Storage.js"></script>
+  <script src="AI.js"></script>
+  <script src="App.js"></script>
+</body>
+</html>

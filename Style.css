@@ -1,0 +1,239 @@
+/* ===================== Base ===================== */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --bg: #f7f7fb;
+  --card-bg: #ffffff;
+  --text: #1f2330;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --success: #16a34a;
+  --error: #dc2626;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+/* ===================== Navbar ===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--primary); }
+
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+
+.nav-links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.btn-settings {
+  margin-left: 18px;
+  background: #eef0f7;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.btn-settings:hover { background: #dde0ec; }
+
+/* ===================== Hero ===================== */
+.hero { text-align: center; padding: 30px 0 10px; }
+.hero h1 { font-size: 2.1rem; margin-bottom: 8px; }
+.hero p { color: var(--muted); font-size: 1.05rem; }
+.subtitle { color: var(--muted); margin-top: -6px; margin-bottom: 24px; }
+
+/* ===================== Cards / Grid ===================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.feature-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12); }
+.feature-icon { font-size: 1.8rem; }
+.feature-card h3 { margin: 10px 0 6px; }
+.feature-card p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+/* ===================== Stats ===================== */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.stat-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); text-align: center; padding: 18px 8px; }
+.stat-box strong { font-size: 1.6rem; display: block; color: var(--primary); }
+.stat-box span { color: var(--muted); font-size: 0.85rem; }
+
+/* ===================== Forms ===================== */
+.form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 640px;
+}
+
+label { font-weight: 600; margin-top: 10px; font-size: 0.9rem; }
+
+input[type="text"], input[type="password"], textarea, select, input[type="file"] {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+textarea { resize: vertical; }
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  margin-top: 18px;
+  margin-right: 10px;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-secondary { background: #eef0f7; color: var(--text); }
+.btn-secondary:hover { background: #dde0ec; }
+
+/* ===================== Flash messages ===================== */
+.flash { padding: 12px 16px; border-radius: 8px; margin-bottom: 14px; font-size: 0.9rem; }
+.flash-success { background: #dcfce7; color: var(--success); }
+.flash-error { background: #fee2e2; color: var(--error); }
+
+/* ===================== Lists ===================== */
+.section-title { margin-top: 36px; }
+
+.list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+
+.list-item { display: block; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; text-decoration: none; color: var(--text); }
+.list-item:hover { border-color: var(--primary); }
+.muted { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+
+/* ===================== Flashcards ===================== */
+.flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 26px; }
+
+.flashcard { perspective: 1000px; height: 160px; cursor: pointer; }
+
+.flashcard-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s; transform-style: preserve-3d; }
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+
+.flashcard-front, .flashcard-back {
+  position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+  border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column;
+  justify-content: center; border: 1px solid var(--border);
+}
+
+.flashcard-front { background: var(--card-bg); }
+.flashcard-back { background: var(--primary); color: white; transform: rotateY(180deg); }
+
+.card-label { font-size: 0.75rem; font-weight: 700; opacity: 0.6; margin-bottom: 6px; }
+
+/* ===================== Quiz ===================== */
+.quiz-question { border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 14px; }
+.q-text { margin-bottom: 8px; }
+.options { display: flex; flex-direction: column; gap: 6px; }
+.options label { font-weight: 400; margin: 0; cursor: pointer; }
+
+.score-banner { background: var(--primary); color: white; padding: 16px 20px; border-radius: var(--radius); font-size: 1.1rem; margin-bottom: 20px; }
+
+.results-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.result-item { border-radius: var(--radius); padding: 14px 18px; border: 1px solid var(--border); }
+.result-item.correct { border-left: 5px solid var(--success); }
+.result-item.incorrect { border-left: 5px solid var(--error); }
+
+.answer-chip { display: inline-block; background: #eef0f7; padding: 3px 10px; border-radius: 6px; font-size: 0.85rem; }
+.correct-chip { background: #dcfce7; color: var(--success); }
+
+/* ===================== Explanation ===================== */
+.explanation-box { background: #eef2ff; border: 1px solid #c7d2fe; border-radius: var(--radius); padding: 20px; margin: 20px 0; }
+
+/* ===================== Table ===================== */
+.data-table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: var(--radius); overflow: hidden; }
+.data-table th, .data-table td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+.data-table th { background: #f3f4f6; }
+
+/* ===================== Footer ===================== */
+.footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 20px; }
+
+/* ===================== Modal (Settings) ===================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal.open { display: flex; }
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+}
+
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.modal-header h3 { margin: 0; }
+
+.modal-close { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); }
+
+.modal-content form { display: flex; flex-direction: column; }
+.hint { font-size: 0.78rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.hint a { color: var(--primary); }
