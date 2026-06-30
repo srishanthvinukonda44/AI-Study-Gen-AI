@@ -27,5 +27,5 @@ It can generate **flashcards, quizzes, and simplified explanations** from any no
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/ai-study-buddy.git
+git clone https://github.com/srishanthvinukonda44/ai-study-buddy.git
 cd ai-study-buddy
